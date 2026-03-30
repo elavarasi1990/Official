@@ -1,0 +1,193 @@
+1.Set Proxy:-
+SET HTTPS_PROXY=http://z007878:Autumn12@cosmos-vip.intra.renault.fr:3128
+SET HTTP_PROXY=http://z007878:Autumn12@cosmos-vip.intra.renault.fr:3128
+
+export HTTPS_PROXY=http://z007878:Muruga12@cosmos-vip.intra.renault.fr:3128
+export HTTP_PROXY=http://z007878:Muruga12@cosmos-vip.intra.renault.fr:3128
+
+export unset HTTPS_PROXY=http://z007878:Winter12@cosmos-vip.intra.renault.fr:3128
+export unset HTTP_PROXY=http://z007878:Winter12@cosmos-vip.intra.renault.fr:3128
+
+export HTTP_PROXY=http://app-proxy.gcp.renault.fr:80
+export HTTPS_PROXY=http://app-proxy.gcp.renault.fr:80
+
+2. gcloud init ( Create or reinitialize the configuration ), choose Y log in to connect -
+Note Before this command please make sure you connect with CLASS  2 Certificate, with USB token. If you are facing Certificate issue after login, Check in Chrome>settings->Security->Manage Certificate-> If there is 2 certificates with name Class1 and Class 2 , then try to remove Class 1 and check again.
+
+3. Log in with Renault mail
+4.In Shell, choose the project to configure -  irn-70740-dev-ext-1c
+5.Choose the region as - europe-west1-b
+6.Verify the configuration -  gcloud config configurations list
+7.Connect with the account -  gcloud auth login
+8. Connect the Dev cluster as we configured for DEV - 
+gcloud container clusters get-credentials gke-irn-70740-dev-ext-cluster-1 --region europe-west1 --project irn-70740-dev-ext-1c
+9.List PODS - kubectl get pods -n bqv-67618
+10.List Secrets - kubectl get secrets -n bqv-67618
+11.List Cloud SQL DB Credentials - kubectl get secret -n  bqv-67618 cloudsql-db-credentials -o yaml
+12. To View Logs -kubectl logs -f bqv-api-b4859b69-sffzn -c api -n bqv-67618 --tail=100
+13. To Connect DB credentials in Pgadmin forward to the port
+kubectl port-forward -n bqv-67618 sqlproxy-pg-bqv-67618-01-f9a4ad15-5589b6b666-ptkjs 5434:5432
+kubectl port-forward -n bqv-67618 sqlproxy-pg-bqv-67618-01-7dcf40c1-76c6ff9c67-wgbxz 5434:5432
+
+kubectl port-forward -n qrq-67512 sqlproxy-85f9d6c54d-vpmlg 5434:5432
+
+kubectl port-forward -n qrq-67512 sqlproxy-56546b8788-fzdsm 5434:5432
+
+kubectl port-forward -n mct-66212 sqlproxy-5f9cb8cdf8-54gq6 5434:5432
+
+kubectl port-forward -n bqv-67618 sqlproxy-559f75d4cb-slnvv 5434:5432
+14. To delete configuration name - gcloud config configurations delete e2b
+
+kubectl describe POD/bqv-listener-94447574c-gwp5x -n bqv-67618
+
+kubectl describe POD/qrq-api-5c87fbddc9-xmtbt -n qrq-67512
+
+To display containers:-
+gcloud container clusters get-credentials gke-irn-70740-dev-cluster-1 --region europe-west1 --project irn-70740-dev-2137137789
+gcloud container clusters get-credentials gke-irn-70740-int-cluster-1 --region europe-west1 --project irn-70740-int-3071693306
+gcloud container clusters get-credentials gke-irn-70740-ope-cluster-1 --region europe-west1 --project irn-70740-ope-2023667555
+
+
+gcloud container clusters get-credentials gke-irn-70740-int-ext-cluster-1 --region europe-west1 --project irn-70740-int-ext-05
+
+gcloud container clusters get-credentials gke-irn-70740-dev-ext-cluster-1 --region europe-west1 --project irn-70740-dev-ext-1c
+
+gcloud container clusters get-credentials gke-irn-70740-ope-ext-cluster-1 --region europe-west1 --project irn-70740-ope-ext-2d
+
+
+
+Proxy --> env | grep -i proxy 
+
+kubectl logs -f  automatic-deblock-batch-1597836600-bfcds -c automatic-deblock-batch -n bqv-67618 --tail=100
+kubectl get secrets -n mct-66212 cloudsql-db-credentials -o yaml
+
+405589ad83c9bd46
+
+export KUBECONFIG=/mnt/c/Users/z007878/.kube/config
+
+
+kubectl get secret -n mct-66212 gcs-bucket-credentials  -o  'go-template={{index .data "credentials.json"}}' | base64 -d  > keyfile.json
+gcloud auth activate-service-account --key-file keyfile.json
+gsutil ls gs://bqv-67618-re7-ext-1/tdf/recv/
+Remove File : gsutil rm gs://bqv-67618-dev-ext-1/Filer/tmp/fic_tmp_mail.txt
+ADD File:-
+create a new file by using command - touch tpays_DRT01BQV.txt
+edit the file using - vim tpays_DRT01BQV.txt
+INSERT esc+shift+i - paste the contents and save( wq)
+gsutil cp tpays_DRT01BQV.txt gs://bqv-67618-re7-ext-1/tdf/recv/
+
+gsutil rm gs://bqv-67618-dev-ext-1/tdf/recv/tpays_DRT01BQV.txt
+
+gsutil rm-r gs://bqv-67618-re7-ext-1/Filer/tdf/Unblock/to_process/
+
+gsutil ls gs://bqv-67618-re7-ext-1/Filer/tdf/Unblock/to_process/
+
+gsutil ls gs://bqv-67618-re7-ext-1/Filer
+
+Switch Account:- gcloud config set account elavarasi.chidambaram@rntbci.com
+
+kubectl get secret -n bqv-67618 gcs-bucket-credentials -o json
+
+kubectl get secrets -n mct-66212 gcs-bucket-credentials -o jsonpath='C:\Users\Public\GCS_DEV_BQV_KEY.json' | base64 -d
+
+gcloud auth activate-service-account --key-file keyfile.json
+
+kubectl exec -it -n qrq-67615 qrq-api-c5478b6b-tqxlj -- /bin/bash
+
+gsutil ls gs://bqv-67618-dev-ext-1
+
+gcloud config configurations activate qrq-dev
+
+gcloud config set account elavarasi.chidambaram@rntbci.com
+
+kubectl exec -it  bqv-listener-bfbb5b78b-ldcz6 bash -n bqv-67618
+
+kubectl logs -f automatic-deblock-batch-1604296800-l5b8b -c automatic-deblock -n bqv-67618 --tail=100
+
+kubectl logs -f unblock-vinlist-z000449-20201120101934-vms4r -c unblock-vinlist -n bqv-67618 --tail=1000
+
+kubectl logs -f defect-vinassociate-79866-20201218155443-2cbfs -c defect-vinassociate -n bqv-67618 --tail=1000
+
+kubectl logs -f block-vinlist-z007878-20201218140342-qr75b -c block-vinlist -n bqv-67618 --tail=1000
+
+kubectl logs -f tpgeo-recv-tpgeo-bcv41bqv.txt-20201105133809-24vpd -c tpgeo-recv -n bqv-67618 --tail=100
+
+kubectl logs -f qrq-api-5c87fbddc9-xmtbt -c qrq-api -n qrq-67512 --tail=1000
+
+
+kubectl logs -f bqv-listener-5964d8b664-thwpm -c bqv-listener -n bqv-67618 --tail=1000
+
+kubectl logs -f bqv-listener-7dfcff6b78-gsgnk -c bqv-listener -n bqv-67618 --tail=1000
+
+kubectl create job -n rp2-58866 --from=cronjob/rp2-retry-service rp2-retry-service-004
+
+kubectl logs -f purge-batch-1604903280-g2fr2 -c purge-batch -n bqv-67618 --tail=1000
+kubectl logs -f purge-vehicle-1604904000-rjhj2 -c purge-vehicle -n bqv-67618 --tail=1000
+kubectl logs -f purge-archive-1604901720-tzpjs -c purge-archive -n bqv-67618 --tail=100
+
+
+kubectl logs -f qrq-api-5c87fbddc9-p7q2f -c cloudsql-proxy -n qrq-67512 --tail=1000
+
+gcloud container clusters get-credentials gke-irn-70740-dev-cluster-1 --region europe-west1 --project irn-70740-dev-2137137789
+
+gcloud container clusters get-credentials gke-irn-70740-int-cluster-1 --region europe-west1 --project irn-70740-int-3071693306
+
+gcloud container clusters get-credentials gke-irn-70740-ope-cluster-1 --region europe-west1 --project irn-70740-ope-2023667555
+
+gcloud container clusters get-credentials gke-irn-70740-dev-2137137789-cluster-1 --region europe-west1 --project irn-70740-dev-2137137789
+
+kubectl -n mct-66212 delete secret -lstatus=pending-upgrade
+
+kubectl -n kube-system patch configmap release-name.v123 --type=merge -p '{??"metadata":{??"labels":{??"STATUS":"DEPLOYED"}??}??}??'
+
+kubectl -n kube-system patch configmap release-name.v123 --type=merge -p '{??"metadata":{??"labels":{??"STATUS":"DEPLOYED"}}}'
+
+kubectl -n mct-66212 kube-system patch configmap release-name.v123 --type=merge -p '{"metadata":{"labels":{"STATUS":"DEPLOYED"}}}'
+
+kubectl -n mct-66212 patch secret mct-66212 --type=merge -p '{"metadata":{"labels":{"status":"deployed"}}}'
+
+kubectl logs -f bqv-api-5bd676cdbc-k25nt -c bqv-api -n bqv-67618 --tail=1000
+kubectl logs -f putmqmsg-1604922360-tbc4q -c putmqmsg -n bqv-67618 --tail=100
+
+$ kubectl delete service -n qrq-67512
+$ kubectl delete deployment -n qrq-66212
+$ kubectl delete ingress -n <namespace> <ingress-name>
+
+https://www.hostinger.com/tutorials/how-to-install-docker-on-ubuntu = > 18.04
+
+kubectl config set-context oao-context --namespace=oao-ns
+
+kubectl config use-context oao-context
+
+
+gcloud config project set irn-70740-dev-213
+https://cloud-migration.gitlab-pages.dt.renault.com/common/documentation/support/databases/restore/#postgresql
+
+putmq:https://gitlabee.dt.renault.com/IRN-67618/bqv-batch/-/commit/21f2f109c1112faa8ca1c1a9aeafd39b522f06ed
+
+https://gitlabee.dt.renault.com/IRN-67618/bqv-batch/-/commit/3e1bdb0a4ea16164aa8c930ab7cdf90e5682255c - StopStart
+
+
+gs://bqv-67618-re7-ext-1/Filer/tdf/
+
+Filer/tdf/Block/processed/
+Filer/tdf/VinAssociate/processed/
+Filer/tdf/Deassociate/processed/
+Filer/tdf/Unblock/processed/
+Filer/tdf/recv/prevdate/processed/
+
+https://developer.ibm.com/components/ibm-mq/tutorials/mq-jms-application-development-with-spring-boot/
+MQ Configuration in localhost:
+1. Application. properties
+ibm.mq.queueManager=QM1
+ibm.mq.channel=DEV.APP.SVRCONN
+ibm.mq.connName=localhost(1414)
+ibm.mq.port=1414
+ibm.mq.user=app
+queue.name=DEV.QUEUE.1
+
+2. Download docker and install and follow steps document Docker_Docker-compose_kubectl_CLI
+3. Set Proxy in docker setting
+
+To check docker image run = docker container ls
+To run image = docker run

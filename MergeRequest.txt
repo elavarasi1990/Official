@@ -1,0 +1,108 @@
+git pull origin development
+git status
+git stash save
+git checkout development
+git pull origin development
+git checkout E2BBackendSonar
+git rebase --onto development
+npm config set proxy=http://z031883:Arcapwd098765@138.21.89.193:3128
+npm config set https-proxy=http://z031883:Arcapwd098765@138.21.89.193:3128
+
+git config --global http.proxy http://z031883:Arcapwd098765@138.21.89.193:3128
+git config --global https.proxy http://z031883:Arcapwd098765@138@138.21.89.193:3128
+
+git config --global --unset http.proxy http://z031883:Harisunela2024@138.21.89.193:3128
+git config --global --unset https.proxy http://z031883:Harisunela2024@138@138.21.89.193:3128
+
+git config --global http.proxy http://xxxx:xxxxx@138.21.89.193:3128
+git config --global https.proxy http://xxxx:xxxxx@138.21.89.193:3128
+https://z031883:PncjXZTCCJ-zEAEptsyT@gitlabee.dt.renault.com/IRN-71755/ted-71755-stack.git/
+
+Merge Requests:
+git status => To check status of our change
+git stash save => To take local backup inside git
+git checkout development => Goto SourceCode
+git pull origin/next development => Pull code from source
+git checkout E2BBackendSonar => Goto our branch(Destination)
+git fetch origin
+git rebase origin/development => Getting code from source to destination / 
+git stash pop => again take local backup into our local
+git status => To check status of our change
+git add => Add to Source (Ready to commit)
+git commit -m "Description of your commit" => Commited in your branch
+git log => Check the status of your commit
+git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+git push origin feature/028 -f => Finally push into your branch and it will create MERGE REQUEST URL.
+git clone https://github.com/elavarasi1990/e2b.git
+git clone https://gitlabee.dt.renault.com/IRN-71755/ted-71755-stack.git
+git checkout tag/oper30-03-2019 -b branchname
+
+
+git commit --amend --no-edit
+
+-Dhttps.proxyHost=cosmos1.mc2.renault.fr -Dhttps.proxyPort=3128 -Dhttp.proxyHost=cosmos1.mc2.renault.fr -Dhttp.proxyPort=3128 -Dhttps.proxyUser=awbqv04 -Dhttps.proxyPassword=c2wrLVqP -Dhttp.proxyUser=awbqv04 -Dhttp.proxyPassword=c2wrLVqP
+
+gradlew build -x test
+gradlew clean build sonarqube -x test
+gradlew clean test jacocoTestReport
+
+Run command from folder project api/ - mvn clean package sonar:sonar -Dhttps.proxyHost=cosmos2.mc2.renault.fr -Dhttps.proxyPort=3128 -Dhttp.proxyHost=cosmos2.mc2.renault.fr -Dhttp.proxyPort=3128 -Dsonar.login=e9edbdbf07657e032f968e6433d5ddb16d683513
+
+cosmos1.mc2.renault.fr
+
+-Dspring.profiles.active=development
+Another branch:
+git fetch origin 
+git checkout feature/1043
+
+OPER:
+git fetch origin feature/OPER-200219
+git checkout -b oper/31012019
+git rebase --interactive HEAD ~60
+git rebase -i HEAD~2
+
+list of commits 
+esc+shift+i - insert
+esc+shift+: wq - save 
+git push origin HEAD:oper/31012019 -f
+create tag
+git push origin HEAD:master -f
+
+git push -f origin fix/778:qualification
+
+git push -f origin development:qualification
+
+git push -f origin feature/667:integration
+
+git commit -m "Error Messages from front end to Back end"
+
+git push origin HEAD:master -f
+
+git fetch origin
+git checkout tagname (0.0.7_b252)
+git checkout origin/development
+git checkout tagname
+git cherrypick
+
+fetch:-
+git fetch origin
+git checkout origin/feature/JavaSpringlatest
+git branch -D GCP/MQRE7
+git checkout -b feature/JavaSpringlatest
+git log
+
+	  
+spring:
+datasource:
+driver-class-name: org.postgresql.Driver
+url: jdbc:postgresql://localhost:5432/bqv
+username: postgres
+password: 1234
+
+datasource.e2b.url=jdbc:postgresql://localhost:5432/bqv?currentSchema=public
+datasource.e2b.username=postgres
+datasource.e2b.password=password
+datasource.e2b.driver-class-name=org.postgresql.Driver
+
+
+

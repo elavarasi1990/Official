@@ -1,0 +1,260 @@
+1)what is immutability   spring.io/projects/spring-boot
+	An object is immutable when its state doesn't change after it has been initialized. 
+	For example, String is an immutable class and, once instantiated, the value of a String object never changes.
+2)How can we create our own Custom Immutable class
+	Declare the class as final to prevent inheritance.
+	Declare all fields as private and final to prevent modification after object creation.
+	 Don't provide setter methods for variables. Make all mutable fields final so that a field's value can be assigned only once. 
+	 Initialize all fields using a constructor method performing deep copy.
+3)If the immutable class dont have setter methods then how can you set the values for the instance fields
+	To set the values for the fields of ImmutableClass, you pass them as arguments to the constructor when creating an instance of the class:
+5)The getter method will return cloned object or the actual object
+
+6)Life cycle of a Thread
+7)What is the use of wait() and sleep()
+8)Difference between wait() and sleep()
+9)Use of join()
+10)Use of yield()
+
+11)what is ConcurrentHashMap
+12)ConcurrentHashMap vs HashTable
+
+13)What is Garbage Collection
+14)If I create a Object where it will be created
+15)Different parts of the Heap Memory
+
+16)Which JDK version you are using
+17)Features of Java 8
+18)What is default methods in Java 8
+
+19)What is Singleton class
+20)How we can create our own Singleton Class
+21)How can prevent a Singleton class from getting cloned-
+we need to implement/override the clone() method and throw an exception
+ CloneNotSupportedException from the clone method
+22)How can we break the singleton pattern
+23)Serialization and Deserialization issues with Singleton
+24)what design patterns you have worked on?
+25)What is factory design pattern- Spring Bean Factory
+is example of Factory Design Pattern
+
+26)Default scope of Bean
+27)Different types of Bean Scopes
+28)What is Dependency Injection
+29)Types of Depedency Injection- Constructor and Setter Injection
+
+30)How polymorphism works in Spring- explain @Qualifier
+
+31)Have you worked on Spring Security? How it works
+
+32)Advantages of Microservice over Monolith
+33)How do you scale the Application using Kubernetes
+34)How will you run the Docker image and deploy..tell the commands
+35)Can we achieve auto scaling using Docker or is there any limitation
+
+36)Can you tell the services in your microservices application
+and how do they interact with each other
+
+37)What is Pub/Sub in Kafka
+38)How many subscribers can subscribe to the Topic
+37What is the role of Broker in Kafka
+38)Diff between Power Mock and Mockito
+
+39)Methods supported by Stream- filter(),map(),flatMap()
+40)How can you find the second largest number in a list of integers
+41)Avg salary of each department using stream
+42)How can you convert the list into Map
+43)Method references in Java 8
+44)JPA specification executor- u can use criteria
+
+45)What is executor in context of Threads
+46)How can you remove the duplicate elements from the array without using
+any built in classes or methods
+
+47)How do you reverse a singly linked list
+48)what is doubly linked list,circular linked list
+
+49)2nd highest salary using sql
+
+50)git commands, rebase
+
+
+1. Why we choose Spring boot over spring?
+  a)Dependency resolution ,version conflict in pom.xml we can download dependency from springboot version.Based on parent version load all child dependency.
+  no need any headache to manage version.
+  b)Avoid additional Configuration-> everything need to do manually ex: application.yaml (datasource,jpa)
+  c)Embedded Tomcat,Jetty ( to get the jar from the target folder and load it application context(8080)port
+  d)Provide production ready features as metrics,health check
+2. How will you run your Springboot application?
+3. purpose of @Sprinbootapplication 
+ @SpringBootConfiguration - Ex:SwaggerConfig,SecurityConfig classed mentioned @Configuration which is loaded while running the application itself
+ @EnableAutoConfiguration - look on pom.xml and load all req jars
+ @ComponentScan - By default laoding all classes inside the package from main class
+ 
+4.Can I directly use above 3 annotation in my main class, instead of using @SpringBootApplication annotation, if yes will my application work as expected
+  @EnableAutoConfiguration
+  @ComponentScan(basePackages={"com.renault.sf.ted.*})
+  @Import({SwaggerConfig.class,SecurityConfig.class})
+  
+5.What is AutoConfiguration in Spring Boot?
+	Datasource configured in application.yaml
+6. How can disable a specific auto configuration class in Spring Boot?
+   @Sprinbootapplication({exclude={DataSourceAutoConfigution.class})
+   or else we can exclude in application.yaml
+7. How can you customize the default configuration in Spring Boot?
+   overwrite port :8081 in application.yaml
+8. How Spring Boot run() method works internally?
+  a) create ApplicationContext
+  b) Register bean into context
+  c) kicked up embedded tomcat container to run war/jar
+9.What is CommandLineRunner in Spring Boot?  
+	public class TedApplication implements CommandLineRunner{
+	@Override
+    public void run(String... args) throws Exception {
+        //Anything we want to perform before starting the application
+    }
+10.Can you Explain the purpose of Stereotype annotations in the spring framework	
+  @Service,@Controller,@Repository,@Component,@RestController	
+11. How can you define bean in spring framework?
+ @Configuration
+ public class AppConfig(){
+   @Bean
+   public DemoService demoService(){
+12.What is dependency Injection?   
+  If we are in Service class if we want other class method..we cannot create a object,because it is tightly coupled.In future if we want to modify class name it will difficult to manage all the time
+  Instead we can @Autowired  
+  OrderSErviceimpl orderService = new OrderSErviceimpl();
+  orderService.getOrder();
+ 13.How many ways we can perform dependency injection in Spring or Spring Boot?
+ 
+   @Autowired //Filed level Dependency Injection(DI)
+    private CompoundRepository compoundRepository;
+
+    @Autowired //Setter DI
+    public void setCompoundRepository(CompoundRepository compoundRepository) {
+        this.compoundRepository = compoundRepository;
+    }
+    @Autowired //Constructor DI
+    public RTVServiceImpl(CompoundRepository compoundRepository) {
+        this.compoundRepository = compoundRepository;
+    } 
+	
+14.Where you would choose to use setter injection over constructor injection, and vice versa
+	 @Autowired //Setter DI //Optional DI //not immtable in nature
+    public void setCompoundRepository(CompoundRepository compoundRepository) {
+        this.compoundRepository = compoundRepository;
+    }
+    @Autowired //Constructor DI //Mandatory DI //immtable in nature//circular dependencycan't resolve
+    public RTVServiceImpl(CompoundRepository compoundRepository) {
+        this.compoundRepository = compoundRepository;
+    } 
+15.Can you provide an example of a real world use case where @PostConstruct is particularly useful
+	@PostConstruct
+    public void construct(){
+        System.out.println("Run Construct==");
+    }
+    public static void main(String[] args) {
+        System.out.println("Run TED Aplication===");
+        SpringApplication.run(TedApplication.class, args);
+    }
+	 First Run method second postconstruct will run ex: connection pool logic,Kafka producer/consumer instantiate,data shedding
+16.How can we dynamically load values in a Spring Boot application?
+  @value	 
+17.Can you explain the key differences between yaml and properties file, and in what scenario you might prefer one format over the other?
+  .Syntax and structure //more readable
+  .Hierachy
+  .list or arrays kind of value
+  .complexity
+18.What is the difference between yml & yaml?
+19.If I will configure same values in both properties then which value will be loaded in Spring Boot or who will load first propeties or yml file?
+   application.properties will load first. we don't have any theritical answer
+20.How to load external properties in Spring Boot?
+  spring.config.import = "c:/desktop/external.properties" (in application.properties)
+21.How map or bind config properties to java object?  
+
+22.How will you resolve bean dependency ambiguity?
+  If we have 2 implement class and 1 interface
+  ex:OrderImpl1,OrderImpl2 ,OrderRepository
+  public class TrailerService{
+    @Autowired 
+	@Qualifier("OrderImpl2")
+    private OrderRepository orderRepository;
+  }
+
+23. Can we avoid ambiguitywithout using @Qualifier?
+public class TrailerService{
+    @Autowired 
+	//@Qualifier("OrderImpl2")
+	@Resource("OrderImpl1")
+    private OrderRepository orderRepository;
+  }
+
+24.What is bean scope? Can you explain different type of bean scope?
+ 1.Singleton 2.Prototype 3.Request 4.Session 5.Application 6.Websocket
+
+40+ Springboot annotations: 
+Spring Core annotations:
+1.Sterotype: 
+ @Component,@Service,@RestController,@Repository 
+2.@configuration, @bean 
+ @Configuration
+@EnableAsync
+public class AsyncConfiguration {
+
+    @Bean(name = "asyncExecutor")
+    public Executor asyncExecutor() {
+        ThreadPoolTaskExecutor executor = new ThreadPoolTaskExecutor();
+        executor.setCorePoolSize(NumericConsts.THREE);
+        executor.setMaxPoolSize(NumericConsts.THREE);
+        executor.setQueueCapacity(NumericConsts.HUNDRED);
+        executor.setThreadNamePrefix("AsyncThread-");
+        executor.initialize();
+        return executor;
+    }
+3.@Autowired --> @RequiredArgsConstructor(It automatically generates code such as constructors, getters, setters, and more based on annotations.)
+4.@Qualifier
+5.@Primary -> If we don't want to mention @Qualifier we have mention @Primary in that OrderImpl2 class after @Service so that this class will be primary one.
+6.@Lazy -> Normally Springboot eager loading,just create or do Ondemand only otherwise nothing do.
+7. @Value - Whenver we want to load from meta data or application.properties file (mail.from ="xxx@gmail.com",mail.to="yyy@gmail.com")
+8. @PropertySource-If we want to define some other propertiesfile except application.properties that we need to define @PropertySource(classpath:custom,properties)
+9.@ConfigurationProperties - IF we want to create DTO class for particular property values. 
+  @ConfigurationProperties(prefix="mail)
+    private String from;
+	private String to;
+10. @Profile - want to move from environment to another
+   spring:
+  profiles :
+    active : ${env:local}
+11. @Scope -> @Scope("singleton") It will create one object and it will stored application context and spring will reuse.	
+	@Scope("prototype") -As many times object will create
+
+REST API:
+1.@RestController
+2.@RequestMapping
+3.@GetMapping
+4.@PutMapping
+5.@PostMapping
+6.@DeleteMapping
+7.@RequestBody
+8.@ControllerAdvice,@ExceptionHandler
+
+Spring Data JPA:
+1.@Entity ,@Table,@column, @Transactional , @OneToOne etc.
+
+Security:
+1. @CrossOrigin,@Secured,@PreAuthorize,@PermitAll
+
+Core Java:
+1.The pillar of OOPs concept includes encapsulation, inheritance, polymorphism, and abstraction.
+2. Parent and child override scenario.
+3. Can we override static and private method? -> No 
+4. final-Keyword ,finally-block	, finalize-method (to clear unused objects using System.gc()
+5. equals() - used to compare object based on its content
+   hashcode() - used to generate unique and reference number of an object through which we can easily identify uniqueness os object.
+   Sometimes Set will allow duplicate data but this won't allow
+6.ways to create string object
+7.write our own immutable class? 
+  1.Make class as final 2.all instance variable with private and final 3.Say no to setter method
+   4. Initialize all variables in Constructor 5.initialize variables in constructor  
+   6.Perform cloning of mutable objects while returning from getter method.
+     

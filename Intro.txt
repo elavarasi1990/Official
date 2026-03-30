@@ -1,0 +1,13 @@
+Good morning, and thank you for the opportunity to introduce myself. My name is Elavarasi Chidambaram, and I bring over 13 years of experience as a Java Backend Developer and Technical Lead.
+I specialize in designing and building scalable enterprise backend systems using Java, Spring Boot, Microservices, and PostgreSQL. Over the years, I’ve worked extensively across backend architecture, API development, performance optimization, production support, and cloud deployment.
+Currently, I work as a Technical Lead at Renault Nissan Technology & Business Centre India client, where I lead backend development activities and collaborate closely with cross-functional teams including architects, DevOps, QA, and product owners.
+In terms of technical skills, I have handson experience with
+Java 21, Spring Boot 3.x/4.x, Spring Security, Spring Batch, PostgreSQL, Oracle, Google Cloud Platform, Git, Docker, Dynatrace, JUnit, Mockito, and CI/CD pipelines.
+I also actively contribute to Agile/Scrum ceremonies and support endtoend delivery.
+One of the key projects I’m currently working on involves calculating tariffs based on the movement of vehicles from one location to another, which required designing optimized algorithms, handling large datasets, and ensuring accurate business rule execution across multiple transaction flows.
+Recently, we also undertook a major migration effort from Java 8 to Java 21, and from Spring Boot 2.2 to 3.3.
+
+I played a key role in planning, executing, and stabilizing this migration.
+Before my current role, I worked as a Senior Software Engineer and Assistant Manager at RNTBCI, contributing to projects like E2B, BQV, GQU, and STRATUS, where I handled multi country batch processes, quality control workflows, and end to end system enhancements. I also had the opportunity to work onsite in France as a coordinator, improving communication and alignment between onsite and offshore teams.
+I hold a Bachelor’s degree in EEE and have earned cloud certifications in Oracle Cloud Infrastructure and AWS Cloud Practitioner. I’m fluent in Tamil, English, and Hindi.
+Overall, I’m someone who enjoys solving complex backend challenges, modernizing legacy systems, and leading teams toward high quality delivery. I’m now looking forward to bringing my technical leadership, cloud expertise, and backend development skills to a new and dynamic environment.

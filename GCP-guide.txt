@@ -1,0 +1,63 @@
+https://cloud.google.com/learn/certification/cloud-engineer - Exam Guide
+https://docs.google.com/forms/d/e/1FAIpQLSfexWKtXT2OSFJ-obA4iT3GmzgiOCGvjrT9OfxilWC1yPtmfQ/viewform - Sample Paper
+https://rsvp.withgoogle.com/events/partner-learning/google-cloud-certifications
+https://partner.cloudskillsboost.google/paths/69 - Courses
+https://cloud.google.com/free/docs/aws-azure-gcp-service-comparison - AWS/Azure Comparison
+
+https://cloud.google.com/learn/certification/guides/cloud-engineer - Exam Registration
+https://github.com/priyankavergadia/GCPSketchnote - Revision
+https://googlecloudcheatsheet.withgoogle.com/ - Developer Cheat sheet
+https://cloud.google.com/terms/services?hl=en - Google cloud product list
+https://cloud.google.com/blog/topics/inside-google-cloud/21-google-cloud-tools-each-explained-under-2-minutes - Short recap
+
+https://cloud.google.com/apis/docs/cloud-client-libraries- Languages based
+https://cloud.google.com/blog/topics/developers-practitioners/where-should-i-run-my-stuff-choosing-google-cloud-compute-optionhttps://cloud.google.com/products/calculator?authuser=1&hl=en - Estimate  and billing based on region selection
+https://cloud.google.com/cdn/docs/locations - Locations,Regions,Zone
+https://cloud.google.com/products/compute?hl=en#section-6
+https://cloud.google.com/blog/products/compute/google-cloud-spot-vm-use-cases-and-best-practices?utm_source=ext&utm_medium=partner&utm_campaign=CDR_rom_gcp_gcptechnuggets_feb-a-2022_021622&utm_content=- 
+https://cloud.google.com/compute/docs/autoscaler/?authuser=1#cool_down_period
+
+https://cloud.google.com/blog/topics/developers-practitioners/map-storage-options-google-cloud - Cloud Storage
+
+https://www.youtube.com/watch?v=CUwpXqEitA0
+https://www.sap.com/products/technology-platform.html
+Himanshu Kakkar
+4:17 PM
+https://cloud.google.com/blog/products/storage-data-transfer/google-cloud-announces-filestore-enterprise-for-business-critical-apps
+ 
+30 Days from the last session to complete all the pre-req and earn the free voucher
+
+partner-training@google.com
+
+Courses,Lab for voucher,PDF files
+
+https://rsvp.withgoogle.com/events/partnerca-ace_24318 -schdule for joining meeting
+
+Each region has 3 zone
+All region interconnected together with network
+Edge Location--> POP--->Point of Presence
+POP- Google Frontend Services (5) CDN -3 only in India
+Preemptable VMs- Stops every 24 Hours
+We can create instance using equivalent code
+Block Level- SAN
+Local Disks
+File Level- NAS
+NFS-v3 or 4.1. In google only NFS v3.0
+Object Level- Hyperconverged Infra
+Cloud Storage
+PD- Saving VM Data (OS +Application)
+Local SSDs- Only used for caching!!
+1 SSD- 375GB
+Max. 9TB of SSD Space per VM Level
+Gemini tool
+
+
+Local SSDD - Cache
+
+ All CDN to be POP = YES but all POP to be CDN
+ Sole tenancy?
+ 
+Digital Leader:
+https://partner.cloudskillsboost.google/paths/75 
+https://services.google.com/fh/files/events/pca_cdl.pdf -voucher
+https://docs.google.com/forms/d/e/1FAIpQLSedAmf77MGS7FGEaylFzY51KtBd7kkIZJIMDsV5zSRSmpKIOA/viewscore?viewscore=AE0zAgDmwt3U4AJRGf_QyqE_yA71i300U60-Z2GQDH-HhxprYaejUPi6mwzM48gGTXGWS2I -sample paper

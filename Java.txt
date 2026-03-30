@@ -1,0 +1,91 @@
+1. Why we use lambda expression?
+  Java 8 featurer.code is more readable and saves a lot of code,to represent one mthd interface using an expression.
+2. Where do we use method reference
+ Reference to a static method.
+ Reference to an instance method.
+ Reference to a constructor.
+3. Filter a list of elements - how do we do?
+4. What are the major collections used
+5. Stream Vs Parallel stream
+  Increasing a preformance of a program introduce parallel stream.Doesn't maintain order but it won't affect final result.If we have more data then we can go for parallel else stream.
+6. Does streaming has any correlation with the cores.
+  if your CPU has multiple cores, Java 8 can potentially leverage these cores to execute stream operations in parallel, improving performance for operations that can be parallelized.
+7. If we are reading from a list and if we are writing from the list to another list, can we use parallel stream in that case
+8. Runnable Vs Callable
+9. Futures
+10. Different ways to create multiple threads
+11. After all tasks are finished in executor service, you need to execute something in the main thread. How will you do it?
+12. Need for micro-services, diff between monolithic and micro-services
+13. Design of MS in the project
+14. Eureka service and it's usage
+15. API gateway usage
+16. Handling security stuffs in MS
+17. How do you communicate between the services in your application - Feign client
+18. How to enable Eureka server and register the clients
+19. Annotations used in spring boot
+20. Caching annotations
+21. What's transient (@Transient)
+22. Different bean scope
+23. Singleton pattern
+24. Prototype pattern
+25. Basic Kafka setup
+26. What's the basic adv of Kafka over other messaging queues
+27. Consumer groups in Kafka
+28. If 2 consumers are part of a consumer group, both the consumers will get the same message or only either of them will get the same message
+29. What happens if 2 consumers belong to different consumer groups
+30. Concept of sharding
+31. How do we shard the data? What's shard key?
+32. SQL Vs no SQL database
+33. You have an array of 0's and 1's. Segregate them such that 0's are at left and 1's at right.
+34. How 33 can be done in min time. Pick an algorithm.
+
+Java Techie: (Collections)
+1. What are collections used in your project?
+  List,SEt,Map
+2.Different b/w List and Set?
+3.Different b/w ArrayList and LinkedList?
+4.List object creation scenario?
+  ArrayList arrayList = new ArrayList<String>()
+  List<String> list = new ArrayList<>()
+5.Declaring a list field with final keyword ? YES
+6.How can write Custom ArrayList where I don't want to allow duplicate?
+  public class Sample extends ArrayList {
+
+    public boolean add(Object o){
+        if(this.contains(o)){
+            return true;
+        }else{
+            return super.add(o);
+        }
+    }
+    public static void main(String[] args) {
+        Sample list = new Sample();
+        list.add(1);
+        list.add(1);
+        list.add(2);
+        System.out.println(list);
+    }
+  
+7.Comparable and Comparator
+8.fail fast - An iterator which will fail fast when do any modification while iterating a collection(ArrayList,HaspMap,Vector)
+  fail safe - Iterator who allows us to modify in middle while iterating a collection(CopyOnWriteArrayList,ConcurrentHashMap)
+9. Need of concurrentHashMap and diff b/w from hashMap
+  HashMap       											concurrentHashMap
+ 1.Non-Synchronised  											Synchronised
+ 2.Not thread safe												Thread safe
+ 3.failfast throw exception while iteration					fail safe 
+ 4.stores null keys and values								does not allow
+ 5.faster													slower than hashMap
+ 
+10.If we have hashtable which is already synchronised then why we need ConcurrentHashMap?
+  Ans:Locking Mechanism still same as per HashMap (no segment or bucket locking)
+11. We can Synchronise a HAshMap using collections then why can't we use that instead using ConcurrentHashMap?
+  Ans:If we use Collections.synchronised it will act as Hashtable again locking mechanism is different.
+12.How HashMap works internally?
+
+	Internal structure or working of Hashmap.
+	map.put("key", "value") ---> Find hashCode() of the key: "key".hashCode() -->Find bucket index using hashcode: Hashcode & (length-1) --> Hash Collision
+	Hash Collision --> YES--> Key already present?? "key".equals("existing-key") -->YES--> Add to Linked List by  replacing existing equal node 
+	Hash Collision --> NO --> Simply add to Linked List as first node
+	Key already present?? "key".equals("existing-key") -- >NO --> Add to Linked List as next node
+13. If key is null then where can it store in map?  -. It will store at 0th index  	
