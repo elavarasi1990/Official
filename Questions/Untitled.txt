@@ -1,0 +1,125 @@
+Hibernate
+-----------
+What is Hibernate? JPA? Benefits of Hibernate ? databases supported by Hibernate. https://www.javatpoint.com/hibernate-tutorial
+Advantages of Hibernate over JDBC? https://www.quora.com/Why-hibernate-over-JDBC
+Interfaces in Hibernate ? https://javahike.wordpress.com/2013/02/01/core-interfaces-in-hibernate-framework/
+hfg - hibernate configuration file? hibernate mapping file?
+SessionFactory and how to configure it? SessionFactory is thread safe? https://stackoverflow.com/questions/14259652/reasons-why-hibernates-sessionfactory-is-thread-safe
+What is Hibernate Session ? Session is thread safe?
+States of the object in hibernate? http://javawebtutor.com/articles/hibernate/hibernate-object-states.php
+How to make an immutable class in hibernate? http://javawebtutor.com/articles/hibernate/hibernate-object-states.php
+lazy loading?  https://www.baeldung.com/hibernate-lazy-eager-loading
+automatic dirty checking?
+types of collections in hibernate? https://www.javatpoint.com/collection-mapping
+Difference between Hibernate Session get() and load() method? https://mkyong.com/hibernate/different-between-session-get-and-session-load/
+What is hibernate caching? Explain Hibernate first level cache? first level cache Vs Second level  cache, wich is default cache? https://www.javatpoint.com/Caching-in-hibernate
+ways to disable hibernate second level cache? 
+createquery Vs createsqlquery Vs createcriteria? http://codethataint.com/blog/difference-between-createquery-vs-createsqlquery-vs-createcriteria/
+three inheritance models are of hibernate?
+What is use of Hibernate Session merge() call? https://www.dineshonjava.com/difference-between-merge-and-update-methods-in-hibernate/
+What is difference between Hibernate save(), saveOrUpdate() and persist() methods? https://www.baeldung.com/hibernate-save-persist-update-merge-saveorupdate
+How to implement Joins in Hibernate?
+Can we add multiple databases in one configuration file in Hibernate? Can we have more than one DB for our project using Hibernate,How?	
+What is HQL and what are it’s benefits?
+What is Query Cache in Hibernate? https://www.dineshonjava.com/hibernate/using-query-cache-in-hibernate/
+Can we execute native sql query in hibernate?
+What is the benefit of native sql query support in hibernate?
+What is Named SQL Query? benefits ?
+What is the benefit of Hibernate Criteria API? https://howtodoinjava.com/hibernate/hibernate-criteria-queries-tutorial/#projections_aggregates
+What is cascading and what are different types of cascading?
+Which design patterns are used in Hibernate framework?
+
+
+Spring
+----------
+What is Spring Framework? 
+advantages/features ? 
+Current version,which version u used?
+Modules in Spring?
+Dependency Injection? https://www.baeldung.com/inversion-control-and-dependency-injection-in-spring
+Implement DI ? https://www.javatpoint.com/ioc-container
+Constructor Injection Vs Setter Injection
+Spring Modules? 
+AOP ? https://www.javatpoint.com/spring-aop-tutorial
+Components of AOP?  
+Spring AOP Vs AspectJ AOP? 
+different AOP implementations?
+IoC Container?  
+types of IOC containers. 
+BeanFactory vs ApplicationContext
+What is a Spring Bean? https://www.tutorialspoint.com/spring/spring_bean_definition.htm
+Spring bean configuration file?
+different ways to configure a class as Spring Bean? https://www.javapedia.net/Spring-Beans/827
+different scopes of Spring Bean? https://mkyong.com/spring/spring-bean-scopes-examples/
+Spring Bean life cycle? 
+Are singleton beans thread-safe?
+What is Bean wiring and @Autowired annotation? 
+different types of Spring Bean autowiring? 
+limitations with auto wiring?
+Does Spring Bean provide thread safety? https://www.java2novice.com/java_interview_questions/spring-singleton-thread-safe/
+Controller in Spring MVC?  https://www.journaldev.com/21515/spring-controller-spring-mvc-controller
+difference between @RequestMapping,@Component, @Repository ,@Service annotations ,@Qualifier,@Required, ViewResolver in Spring? https://stackoverflow.com/questions/6827752/whats-the-difference-between-component-repository-service-annotations-in
+Can we have multiple Spring configuration files?
+How can we use Spring to create Restful Web Service returning JSON response?
+Important Spring annotations you have used?
+What is Spring Security? 
+design patterns used in Spring Framework?
+Can you inject null and empty string values in Spring?
+types of transaction management(TM),Which TM type is more preferable?
+What is a DispatcherServlet?
+
+Spring Boot
+----------------
+Spring Boot mean? https://spring.io/projects/spring-boot
+Advantages ? https://www.baeldung.com/spring-vs-spring-boot
+features of Spring Boot? 
+Which version u used? 
+recent version? 
+new release feature?
+What do Dev Tools in Spring boot mean?  https://www.vojtechruzicka.com/spring-boot-devtools/
+Spring Boot Starter Pom mean? https://www.baeldung.com/spring-boot-starters
+Why Is It Useful?
+spring-boot-starter-parent? https://www.baeldung.com/spring-boot-starter-parent
+spring-boot-starter-web? 
+Profiles in spring boot? https://www.baeldung.com/spring-profiles
+Actuator ? https://www.baeldung.com/spring-boot-actuators
+ Why in spring boot Opinionated  is used?
+What is Auto Configuration? https://dzone.com/articles/what-is-spring-boot-auto-configuration 
+How can you enable auto reload of application with Spring Boot?
+What is the difference between RequestMapping and GetMapping in Spring Boot? https://stackoverflow.com/questions/39077787/difference-between-the-annotations-getmapping-and-requestmappingmethod-requ
+How do you Change tomcat or jetty HTTP port?
+How to disable specific auto-configuration in spring boot? https://www.baeldung.com/spring-data-disable-auto-config
+use of YAML in Spring Boot?
+How to set the active profile in Spring Boot? https://www.baeldung.com/spring-profiles
+Spring Boot Admin?
+How to access a value defined in the application.properties file in Spring Boot? https://stackoverflow.com/questions/30528255/how-to-access-a-value-defined-in-the-application-properties-file-in-spring-boot
+How to run Spring boot application to custom port ?
+What is Swagger ? https://www.baeldung.com/swagger-2-documentation-for-spring-rest-api
+Have you implemented it using Spring Boot ?
+CSRF attack? How to enable CSRF protection against it?
+OAuth2? How to implement it using Spring Boot?
+Microservices with Spring Boot. Microservices Architecture. MS  features?
+Your project structure based on MS ?
+
+You should have some basic knowledge on below:
+Docker - this is what I try to mention as "Image"
+
+AWS
+---
+Lambda
+Serverless Architecture
+EC2
+
+CICD Tools
+------------
+Bamboo / Jenkins /Ansible
+Bamboo is a continuous integration (CI) server that can be used to automate the release management for a software application, creating a continuous delivery pipeline.
+Jenkins is an open-source tool, while Bamboo is a commercial tool.
+
+Backlog / CR / US Management
+------------------------
+JIRA / HP Quality
+
+/employeeId/1
+
+/employeeId?id=1

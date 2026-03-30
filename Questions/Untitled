@@ -1,0 +1,819 @@
+Forum to refer:
+1. https://www.zoltanraffai.com/blog/what-is-spring-boot/
+2. http://www.captaindebug.com/2012/09/spring-31-caching-and-cacheevict.html#.W_eclzgzapo
+3. https://spring.io/blog/2015/07/14/microservices-with-spring
+3.1 http://www.springboottutorial.com/creating-microservices-with-spring-boot-part-1-getting-started
+3.2 https://www.edureka.co/blog/microservices-with-spring-boot
+4. https://docs.gitlab.com/ee/ci/quick_start/
+5. https://www.digitalocean.com/community/tutorials/how-to-set-up-continuous-integration-pipelines-with-gitlab-ci-on-ubuntu-16-04
+	
+	Thread related questions:
+	
+6. https://dzone.com/articles/top-15-java-multithreading-concurrency-interview-q
+
+Things to study:
+OOPs Concepts & SOLID Principles:
+https://blog.interviewmocha.com/java-interview-questions
+
+1. Spring boot
+	0. Design patterns. 
+		Factory Design pattern: https://www.tutorialspoint.com/design_pattern/factory_pattern.htm
+		https://blog.eduonix.com/java-programming-2/learn-design-patterns-used-spring-framework/
+		SOLID: 
+		S -> Single responsibility.
+		O -> Open close principle
+		L -> Liskov
+		I -> Interface segragation.
+		D -> Dependency
+	
+	String Constant Pool:  https://javaconceptoftheday.com/how-the-strings-are-stored-in-the-memory/
+		JVM divides the allocated memory to a Java program into two parts. 
+		one is Stack and another one is heap. 
+		Stack is used for execution purpose and heap is used for storage purpose. 
+		In that heap memory, JVM allocates some memory specially meant for string literals. 
+		This part of the heap memory is called String Constant Pool.
+		
+		public class StringExamples
+			{
+				public static void main(String[] args)
+				{
+					//Creating string objects using literals			 
+					String s1 = "abc";			 
+					String s2 = "abc";			 
+					System.out.println(s1 == s2);        //Output : true
+			 
+					//Creating string objects using new operator			 
+					String s1 = new String("abc");			 
+					String s2 = new String("abc");			 
+					if(s1 == s2);        //Output : false
+					S3.concat("srini"); // 
+					S.op(S3) => Returns "abc" => Bcoz String is immutable.
+					
+				}
+			}
+
+	In simple words, there can not be two string objects with same content in the string constant pool. 
+	But, there can be two string objects with the same content in the heap memory.
+	
+	Volatile and Transient Variable or Modifier:
+	Transient:
+		Transient variables are not serialized during Serialization process in Java.
+		
+	Volatile:
+		Volatile variables are used to provide alternative synchronization in Java.
+		Indicator to Java compiler and Thread that do not cache value of this variable and always read it from main memory.
+		We use during Singleton.(https://javarevisited.blogspot.com/2011/06/volatile-keyword-java-example-tutorial.html)
+
+	Read more: https://javarevisited.blogspot.com/2011/06/volatile-keyword-java-example-tutorial.html#ixzz5tjkJpUBU
+	
+	ThreadDump: To analyse Dead lock in code we use Thread dump. 
+	
+	concurrency level of ConcurrentHashMap in Java : 16
+	
+	String intern():
+	intern() method of java.lang.String class is used to perform interning i.e creating an exact copy of heap string object in string constant pool. 
+	String s1= new String("asb");
+	String s2 = s1.intern();
+	
+	s1 == s2 // Return false. where S1 is created using new obje, then it will available in Heap
+	S2 -> is available in String contant pool.
+	
+	StringBuffer() and StringBuilder() : Both are mutable.
+	StringBuffer: Not thread safe and Not Synchronised.
+	
+	ArrayList vs LinkedList Difference:
+	Arraylist : Based on dynamic array.
+	LinkedLIst: Implemented based on double linked list.
+	
+	Insertions are easy and fast in LinkedList because there is no risk of resizing array and copying content to new array if array gets full.
+	LinkedList has more memory overhead than ArrayList because in ArrayList each index only holds actual object (data) 
+	but in case of LinkedList each node holds both data and address of next and previous node.
+	
+	
+	
+	Abstract Class:
+	https://www.javatpoint.com/abstract-class-in-java
+	https://www.geeksforgeeks.org/abstract-classes-in-java/
+	
+	Constructor of Abstract class is created when instance of Inherit is created.
+	Eg:
+			// An abstract class with constructor 
+			abstract class Base { 
+				Base() { System.out.println("Base Constructor Called"); } 
+				abstract void fun(); 
+			} 
+			class Derived extends Base { 
+				Derived() { System.out.println("Derived Constructor Called"); } 
+				void fun() { System.out.println("Derived fun() called"); } 
+			} 
+			class Main { 
+				public static void main(String args[]) {  
+				   Derived d = new Derived(); // Called Base class Constructor.
+				   Base d = new Derived() // correct. 
+				   Base d = new Base() // Compiler error. Not to create instance for Abstract class.
+				} 
+			} 
+		op:
+		Base Constructor called.
+		Derived Concructor is created.
+	
+	How to configure two datasource in Spring Boot:
+	
+	Step1 : add two datasource in properties file.
+	Step2: Create two configuration class
+	Step3: In first configuration class,
+			Add
+			@EnableJPARepository {
+				EntityManagerRef = "",
+				TransactionManagerRef = ""
+				basepackage=""
+			}
+			Add @primary in database Bean
+	Step4:
+			Don't add @primary annotation in second configuration class.
+			
+	
+	
+	i. Spring vs Spring Boot	
+		*simpler and faster way to set up, configure and run both simple and web-based applications.
+		*Auto-Configuration
+		*Standalone		
+	ii. Dependency Injection 
+		*Dependency Injection in Java is a way to achieve Inversion of control (IoC).
+		*Dependency Injection makes our programming code loosely coupled
+		*The Dependency Injection is a design pattern that removes the dependency of the programs
+	iii. Autowired
+	iv. Spring microservices.
+		*Microservices allow large systems to be built up from a number of collaborating components.
+		*The Web-Application will make requests to the Account-Service microservice using a RESTful API. 
+		*Refer : Forum - 3
+	v. Rest Template (methods available in Rest )
+	vi. Spring Batches
+	vii. Spring Point cut
+	viii. Spring metrices.
+	ix. Spring Data JPA
+		https://www.objectdb.com/java/jpa/persistence
+		*One of the core projects in Spring’s suite of tools.
+		*Simplifies Data Access Layer
+		*Used to perform standard CRUD operations. CRUD is an acronym for Create, Read, Update and Delete.
+	x. Differnce between cacheable and cacheevict 
+	   *Refer : Forum - 2
+	   *Cache: whose return value is stored in cache
+	   *cacheevict: is used to clear the cache
+	xi. How to create CUSTOM ANNOTATION in Spring BOOT.
+	xi. API :
+		Sample API:
+		ResponseEntity<List<Plant>> response = restTemplate.exchange(baseUrl + LOU_API_PLANTS + "/" + TRIENNAL_SYSTEM_SOURCE_CODE,
+                HttpMethod.GET, getHttpEntity(), new ParameterizedTypeReference<List<Plant>>()
+2. Java
+	i. Exceptional Handling
+	ii. Comparator / Comparable
+	iii. Lambda Expresession
+	iv. Stream types
+	v. Stream samples (compare two object, check object is available, delete)
+	
+3. Rest APIs
+	i. Methods available.
+	ii. Difference between @put and @Post
+		POST method: 
+		POST is often used to create a new entity
+		The POST method is not idempotent, however POST responses are cacheable
+		
+		PUT method : 
+		PUT is idempotent, but paradoxically PUT responses are not cacheable.
+		PUT is often used to update an existing entity.
+		
+HTTP Status code
+	1xx:  Communicates transfer protocol-level information.
+	2xx: Success (200,201,202,204)	- Indicates that the client’s request was accepted successfully.
+	200 - OK , 201- Created , 202-Accepted, 204-No Content
+	3xx: Redirection(301 / 02/03/04/07) -Indicates that the client must take some additional action in order to complete their request.
+	4xx: Client Error(400/01/02/03/04/05)	This category of error status codes points the finger at clients.
+	5xx: Server Error(500/01)	The server takes responsibility for these error status codes.
+	
+4. GIT Pipeline / Commands
+	*Push / pull / cherry-pick , ...
+	*Git Pipeline : Refer 4.
+5. ELK
+	i. Query Elastic search
+	ii. Logstream configuration.
+	
+6. Amazon S3
+7. Hibernate
+	1. Difference between get and load
+	2. Types of cache.
+8. Message Queue
+	1. Thread in queue.
+	2. Producer / consumer
+	3. JMSListener
+	
+9. Docker
+10. Memory Management ( Increase pool size, DB call inside loop , Server load balance, Increase Heap memory )
+	Java has automatic memory management, 
+	Garbage collector : Works in the background to clean up the unused objects and free up some memory.
+	https://dzone.com/articles/java-memory-management
+	https://www.journaldev.com/2856/java-jvm-memory-model-memory-management-in-java
+	1. Old generation 
+	2.YOung generation
+	3. Permanent generation (PermGen Space)  ==> which is replace by MetaSpace in Java1.8
+	
+	java 1.8 : Memory management::
+	http://karunsubramanian.com/websphere/one-important-change-in-memory-management-in-java-8/
+	
+	java1.8 :
+	How Comparator become Functional Interfaces:
+		Comparator has 2 abstract methods. 1. Compare 2. Equals.
+		Where equals : Inherit from java.lang.object class. It is mentioned that, a interface which overrider abstract method from Object, is not considered as count.
+	
+	Difference between Permgem and Metaspace:
+		PermGen:  
+		Is part of Java Heap memory.
+		We configure size in -Xmx option.
+		
+		MetaSpace : 
+		Is NOT part of Java Heap. It is part of Native Memory (Process Memory).
+		We configure size in -XX:MaxMetaspaceSize. Bcoz, if ur server eats lot of memory, then not only our application down our server itself down.
+	
+	
+	Difference between Stream.map() and Stream.flatMap():
+	Both map and flatmap() can be applied to Stream<T> and they both return Stream<R>.
+	
+	Map() 		: Produces one output value for each input value.
+	flatMap()   : Produces an arbitary number (zero or more) values for each input value.
+	
+	list1 : [1,2]
+	list2 : [1,1]
+	without flatMap : [[1,2],[1,1]] -> list of list.
+	with flatmap: [1,2,1,1] one list
+	
+11. Time Slicing
+	Time slice is introduced in operating system for scheduling processes.
+	A task executes for a predefined slice of time and then reenters the pool of ready tasks. 
+	The scheduler then determines which task should execute next, based on priority and other factors.
+
+12. UML
+
+
+	Multithreading
+	
+	If you using Tomcat as embedded server:
+	spring.tomcat.max-threads=0 // which is default value
+	
+point cut
+  Pointcut Designators
+  exectuion,within, this& target
+
+micro services connect in spring boot
+rest services -> 
+List of web service frameworks
+	Jersey RESTful Web Services framework is an open source framework for developing RESTful Web Services in Java. 
+	It provides support for JAX-RS APIs and serves as a JAX-RS (JSR 311 & JSR 339) Reference Implementation.
+access a RESTful microservice - > RestTemplate
+
+Dependency Injection
+	@Autowired
+	Spring can autowire a relationship between collaborating beans without using constructor-arg and 
+	property tags which helps with the amount of XML configuration.
+
+JPA
+	how to create snapshot for spring boot
+	Spring securities
+	Spring metrices
+
+Difference between @Component, @Service , @repository
+	https://www.baeldung.com/spring-component-repository-service
+	@Component:
+	To mark bean as Spring managed components.
+	Spring only pickup and register only with annotate @component and register it in ApplicationContext during @componentScan
+	
+	@Service => for service layer
+	@repository => for persistance layer.
+	
+	
+	@Component Vs @Bean
+	
+	@Component is class level bean.	
+		used to auto-detect and auto-configure beans using classpath scanning.
+		
+	@Bean: is method level
+	
+	
+	
+
+. What is differences between RESTful web services and SOAP web services?
+1) REST is more simple and easy to use than SOAP
+2) REST uses HTTP protocol for producing or consuming web services while SOAP uses XML.
+3) REST is lightweight as compared to SOAP and preferred choice in mobile devices and PDA’s.
+4) REST supports different format like text, JSON and XML while SOAP only support XML.
+5) REST web services call can be cached to improve performance.
+
+Is REST normally stateless?
+Yes.
+which means , server doesnot store any session data.
+REST works in HTTP protocol (GET, post, put, delete)
+
+What does @RequestMapping do?
+	@RequestMapping can be applied to the controller class as well as methods. 
+	This annotation for mapping web requests onto specific handler classes and/or handler methods
+
+What is the difference between @Controller and @RestController?
+	The key difference between a traditional Spring MVC @Controller and the RESTful web service @RestController is the way 
+	the HTTP response body is created. While the traditional MVC controller relies on the View technology, 
+	the RESTful web service controller simply returns the object and the object data is 
+	written directly to the HTTP response as JSON/XML by registered HttpMessageConverters.
+
+Hibernate
+
+1. The core interfaces of Hibernate framework are:
+	Configuration
+	SessionFactory
+	Session
+	Query
+	Criteria
+	Transaction
+
+2. Types of cache.
+	i. Session cache : caches objects within the current session. It is enabled by default in Hibernate.
+	ii. Second level cache: The second level cache is responsible for caching objects across sessions. .
+	iii. Query cache; is used to cache the results of a query
+
+Difference between get and load
+	Session.get() :
+		It always hit the database and return the real object, an object that represent the database row, not proxy.
+		If no row found , it return null.
+	Session.load() :
+		It will always return a “proxy” (Hibernate term) without hitting the database. 
+			In Hibernate, proxy is an object with, its properties are not initialized yet, 
+			it just look like a temporary fake object.
+		If no row found , it will throws an ObjectNotFoundException.
+
+Types of association mapping are possible in hibernate?
+	There can be 4 types of association mapping in hibernate.
+
+	One to One
+	One to Many
+	Many to One
+	Many to Many
+
+States of object in hibernate?
+	There are 3 states of object (instance) in hibernate.
+
+	Transient: The object is in transient state if it is just created but has no primary key (identifier) and not associated with session.
+	Persistent: The object is in persistent state if session is open, and you just saved the instance in the database or retrieved the instance from the database.
+	Detached: The object is in detached state if session is closed. After detached state, object comes to persistent state if you call lock() or update() method.
+
+lazy loading in hibernate?
+
+Get and Load in Hibernate ?
+
+1. How to avoid concurrentModificationException.
+		CopyOnArrayWrite
+		ConcurrentHashMap
+
+2. Difference between Hashmap and Concurrent Hashmap
+	While one thread is Iterating the HashMap object, if other thread try to add/modify the contents of Object 
+	then we will get Run-time exception saying ConcurrentModificationException.
+	Whereas In ConcurrentHashMap we wont get any exception.
+	
+	Hashmap 
+	-> Not thread safe
+	-> Allow one null key.
+	
+	Hashmap makes into thread safe??
+	Collections.synchronizedMap(hashmap);
+	
+	
+	Concurrent Hashmap
+	-> Thread safe
+	-> Not allow null key.
+	
+	Hashmap Internal storage:
+	Node<K,V> ( Linked list of Nodes)	
+	
+	1. Hashmap uses buckets (0-15 in size = 16) 
+	2. Convert key into Ascii value and take modules 
+	3. Based on remainder, it will store value in Single Linked list in corresponding buckets.
+	4. In java1.8, if Link.list reaches maximum THREASHOLD (8), it uses balanced tree to store value.
+
+	how put works inside Hashmap: 
+	PUT methods like this:
+	hmap.put("KING", 10);
+	
+	
+	put(K k, V v) {
+		hash(k); // Apply hashing and take hash code.
+		index = hash & (n-1); // Take remainder.
+	}
+	How Node ( linked list) be looks like:
+	
+	KING| 2306996 | 10 | null
+	
+2. What are types of IoC containers? Explain them.
+	The Spring container is at the core of the Spring Framework. 
+	The container will create the objects, wire them together, configure them, 
+	and manage their complete life cycle from creation till destruction.
+	
+	Types:
+	1. Spring BeanFactory Container
+	2. ApplicationContect Container
+
+WHAT ARE THE TWO TYPES OF CACHE (CACHE) YOU KNOW IN JPA AND WHAT ARE THEY FOR?
+JPA talks about two kinds of caches (cache):
+
+1) first-level cache (first-level cache) —caches data from a single transaction;
+
+2) second-level cache (second-level cache) —caches data for more than one transaction. 
+
+Publish & Subcribe:
+https://www.ev3dev.org/docs/tutorials/sending-and-receiving-messages-with-mqtt/
+
+RAML
+https://raml.org/developers/raml-100-tutorial
+	
+Design sharding ?
+Java interview
+Hashmap how it works
+Linked list - when to use
+Multithreading 
+Thread lifecycle:
+	1. New
+	2. Running
+	3. Runnable
+	4. non runnable
+	5. Terminated
+	
+	Create thread by two types:
+	1. extends thread class
+	2. implements thread interface
+	
+	Example of Thread class:
+	
+	public class M extends Thread {
+		public void run() {}
+	}
+	public static void main () {
+		M m = new M();
+		m.start();
+	}
+	
+	Implements Thread
+	public class M implements Thread {
+		public void run() {}
+	}
+	public static void main () {
+		M m = new M();
+		Thread t1 = new Thread(m);
+		t1.start();
+	}
+	
+	Thread Scheduler:
+	----------------
+	JVM will decide which thread to run
+	
+	Preemptive Vs Time slicing:
+	----------------------------
+	Preemptive: High priority task will run 
+	Time slice: Task execute for certian period of time
+	
+
+	Reentrant Monitor in Java (CTS Interview Question)
+	-------------------------
+	Java monitors are reentrant.
+	The Java runtime system allows a thread to re-acquire a monitor that it already holds because Java monitors are reentrant. 
+	It eliminate the possibility of a single thread deadlocking.
+	
+	Exa;
+	
+	class Reentrant {
+		public synchronized void a() {
+			b();
+			System.out.println("here I am, in a()");
+		}
+		public synchronized void b() {
+			System.out.println("here I am, in b()");
+		}
+	}
+	Reentrant contains two synchronized methods: a and b. 
+	The first synchronized method, a, calls the other synchronized method, b.
+
+	
+	Java.lang.ThreadLocal class in Java (CTS Interview question)
+	--------------------------------------------------------------
+	This class provides thread local variable.
+	Each thread has its own , independent initialized copy of variable.
+	
+	
+	Methods:
+	get()
+	set()
+	remove();
+	initialValue();
+	
+how to do multithreading using 2 threads
+2d matrix using array
+dry run
+
+Autowired and qualifier difference
+Tree map -> Internal
+String internal
+Parking logic
+native query
+Abstract class contructor
+transient variable
+String class constant pool
+
+z003454
+68411514
+
+CTS Interview
+
+Starts with 'c' 
+if no record found, what could be the list value Null or Empty
+
+Terminal Operator -> Sum / Min / Max
+
+		List<Student> student = new ArrayList<Student>();
+		student.add(new Student("Tri","Male",37));
+		student.add(new Student("Frini","Male",48));
+		student.add(new Student("Srinivasan","Male",18));
+		student.add(new Student("Srini","Male",18));
+
+	
+		
+		Comparator<Student> comparator = Comparator.comparing(Student :: getAge);
+		Student stumin = student.stream().min(comparator).get();
+		Student stumax = student.stream().max(comparator).get();
+		
+Predicate function
+
+		List<Integer> lst = Arrays.asList(1,2,3,4,5,6);
+		
+		Predicate<Integer> evenfun = (a) -> a%2 == 0;
+		Predicate<Integer> oddfun = evenfun.negate();
+		
+		List<Integer> myList = Arrays.asList(10,15,8,49,25,98,98,32,15);
+		
+		int evensum = lst.stream().filter( a -> a%2 == 0).mapToInt((a) -> a).sum();
+		int oddsum = lst.stream().filter(oddfun).mapToInt( (a) -> a).sum();
+		
+Sum of integers
+		List<Integer> integers = Arrays.asList(3, 9, 7, 0, 10, 20);	
+		int sum1 = integers.stream().mapToInt(a -> a).sum(); 
+
+		
+Producer & Consumer problem : Solve it by using Blocking Queue 
+Bean scope
+@qualifier
+@Component
+@Exception Handler in Spring boot
+How to use more than one datasouce in Spring Boot
+Jpa repository / CRUD Repository
+Docker
+Functional Interfaces -> with Use case example
+get value as xml and return as Json => How.. using produces= application/json
+foreach in stream ==> they told about some technical words
+findfirst in stream with use case example
+	List<Integer> integers = Arrays.asList(3, 9, 7, 50, 10, 20);	
+	System.out.println("Find FIrst:"+ integers.stream().filter(no -> no > 5).findFirst().get());
+	
+	** FindFirst -> Mostly used in reading file headers.
+
+
+how to use collector.toMap ==> How to set key and value
+How to use grouping by ==> with real case example
+
+	List<Student> lststud = Arrays.asList(
+				new Student("srini","male",25),
+				new Student("srini","male",25),
+				new Student("vasan","male",25),
+				new Student("vasan","female",25),
+				new Student("kaviya","male",25),
+				new Student("varshini","male",25));
+		
+		Map<String,List<Student>> mm = lststud.stream().collect(Collectors.groupingBy(Student::getName));
+		
+		Map<String, Set<String>> result = lststud.stream().collect(
+				Collectors.groupingBy(Student::getName, 
+						Collectors.mapping(Student::getGender, Collectors.toSet())));
+						
+How to use comparator ==> using stream
+	List<Integer> integers = Arrays.asList(3, 9, 7, 0, 10, 20);	
+	System.out.println(integers.stream().max(Comparator.comparingInt(Integer::valueOf)).get());
+	
+	Example2:
+		Comparator<Student> comp = (Student std1, Student std2) -> { 
+			return (int) (std2.getAge() - std1.getAge()) ; 
+		}; 
+		
+		Collections.sort(student, comp);
+		
+		
+ASG Technologies
+1. Even and odd in thread
+2. Sort based on Hash value
+3. 2d array - find NOT
+		
+		
+		
+
+13. Angular
+	Component:  ( Login component, logout component, product list component )
+		1. reusable 
+		2. used to create UI widgets.
+		3. DOM having only one component.
+		4. Component should have template or templteUrl
+	Directive:
+		1. create custom HTML tag.
+		2. Per DOm having multiple directive.
+		3. Not required template or template URL.
+	template:
+		1. template having html content / html tags.
+		
+	Pipe:
+	Pipe types : Pure / impure ii) Custom pipe iii.async
+	
+	Directive has 3 types. 
+	i. Component ii. Structure Directive iii. Attribute directive
+	
+	ng-module -> declaration, imports, bootstrap, providers
+	database connectivity: 
+	1. Obserable 
+	2. promise
+	
+	** very important:: @input, @output , @viewchild		
+	 List<String>strings = Arrays.asList("abc", "", "bc", "efg", "abcd","", "jkl");
+
+List<String>strings = Arrays.asList("x", "", "y", "z", "x","", "y");
+
+        List<String> filtered = strings.stream().filter(string -> !string.isEmpty()).collect(Collectors.toList());
+
+        System.out.println("Filtered List: " + filtered);
+
+        String mergedString = strings.stream().filter(string -> !string.isEmpty()).collect(Collectors.joining(", "));
+
+        System.out.println("Merged String: " + mergedString);
+	List<String> fruits =
+                Arrays.asList("Apple", "Apple", "Banana",
+                        "Cherry", "Cherry", "Banana", "Dates");
+						
+							List<String> depts =
+                Arrays.asList("EEE", "EEE", "ECE",
+                        "Mech", "ECE", "Mech", "IT");
+						
+						List<String> s = Arrays.asList("a", "a", "b",
+                        "c", "b", "c", "d");
+						
+						List<String>
+
+        Map<String, Long> result =
+                items.stream().collect(
+                        Collectors.groupingBy(
+                                Function.identity(), Collectors.counting()
+                        )
+                );
+Map<String, Long> output = Arrays.stream(input.split("")).collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
+	
+	to_char(cdt.tariff_application_date,'DD/MM/YYYY') as tariffApplicationDate
+banana
+
+apple
+
+dates
+
+cherry	
+List<String> fruits = fruits.stream().sorted()
+                            .map(String::toUpperCase)
+                            .collect(Collectors.toList());
+							
+				 Set<String> st = new HashSet<String>(list);
+        for (String s : st)
+            System.out.println(s + ": " + Collections.frequency(list, s));
+			
+			List<Integer> myList = Arrays.asList(10,15,8,49,25,98,98,32,15);
+			
+			https://www.javaprogramto.com/2021/02/%20java-8-groupingby-collector.html
+			
+			https://java2blog.com/java-8-interview-questions/ 
+			
+			45 - mysql
+			
+			PMO
+			HR
+			Admin
+			
+			
+			String str = "Come to school go to school";
+			 String[] split = str.split(" ");
+         
+                HashMap<String,Integer> map = new HashMap<String,Integer>();
+        for (int i=0; i<split.length; i++) {
+            if (map.containsKey(split[i])) {
+                int count = map.get(split[i]);
+                map.put(split[i], count+1);
+            }
+            else {
+                map.put(split[i], 1);
+            }
+        }
+        System.out.println(map);
+    }
+			
+			String s1 = new String("abc");			 
+					String s2 = new String("abc");
+String s1 = "JAVA";
+String s2 = "JAVA";
+
+/Id/1
+/Id?id=1
+
+serialization
+
+how to display one page application
+how to create Springboot app?
+
+imp: https://www.interviewbit.com/spring-boot-interview-questions/
+https://howtodoinjava.com/java/stream/java-streams-by-examples/
+https://www.softwaretestinghelp.com/java/java-interfaces-abstract-classes/
+
+What is abstract?
+Abstract class it contains atleast one abs method.
+
+Get last 30 days record:
+select *
+from school
+where created_time > current_timestamp - interval '30 day';
+
+ public static void main(String... a) {
+   List<Employee> empLst = Arrays.asList(new Employee("Rajat", 36), new Employee("George", 33),new   Employee("Shajan", 43));
+   Comparator<Employee> employeeName = (emp1,emp2)->emp1.getName().compareTo(emp2.getName());
+   Collections.sort(empLst, employeeName);
+    }
+  }
+  
+  https://stackoverflow.com/questions/58981801/create-multiple-maps-from-a-list-in-java-8 - tough
+https://blog.devgenius.io/java-8-coding-and-programming-interview-questions-and-answers-62512c44f062
+1.Print non-repeated characters:
+
+String input = "Java string";
+System.out.println("out--->"+input.chars().mapToObj(c-> (char) c).filter(ch->input.indexOf(ch) == input.lastIndexOf(ch) && ch !=' ').toList());
+
+2.Write a program to print the count of each character in a String:
+Map<String, Long> map = Arrays.stream(s.split(""))
+                              .map(String::toLowerCase)
+                              .collect(Collectors.groupingBy(str -> str, 
+                                LinkedHashMap::new, Collectors.counting()));
+
+// or you can also try using Function.identify() instead of LinkedHashMap
+
+Map<String, Long> mapObject = Arrays.stream(s.split(""))
+                                    .map(String::toLowerCase)
+   .collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
+
+3.How to find only duplicate elements with its count from the String ArrayList in Java8?
+public static void main(String[] args) 
+      List<String> names = Arrays.asList("AA", "BB", "AA", "CC");
+Map<String,Long> count =
+                names.stream().filter(c-> Collections.frequency(names,c) >1).collect(Collectors.groupingBy(Function.identity(),Collectors.counting()));
+  }
+}
+
+Output:
+{AA=2}
+
+4.Given a String, find the first repeated character in it using Stream functions?
+Character result = input.chars() // Stream of String       
+                                  .mapToObj(s -> Character.toLowerCase(Character.valueOf((char) s))) // First convert to Character object and then to lowercase         
+                                  .collect(Collectors.groupingBy(Function.identity(), LinkedHashMap::new, Collectors.counting())) //Store the chars in map with count 
+                                  .entrySet()
+                                  .stream()
+                                  .filter(entry -> entry.getValue() > 1L)
+                                  .map(entry -> entry.getKey())
+                                  .findFirst()
+                                  .get();
+          System.out.println(result);    
+
+    /* or can also try */
+
+        Set<Character> seenCharacters = new HashSet<>();
+
+        return input.chars()
+                    .mapToObj(c -> (char) c)
+                    .filter(c -> !seenCharacters.add(c))
+                    .findFirst()
+                    .orElse(null);     
+
+5.Given a List of Lists of Strings representing sentences, return a List containing all the distinct words from all the sentences.
+
+  public static void main(String[] args) {
+        List<List<String>> listOfSentences = Arrays.asList(
+            Arrays.asList("Hello world"),
+            Arrays.asList("Hello Java")
+        );
+
+        List<String> distinctWords = listOfSentences.stream()
+            .flatMap(List::stream)
+            .flatMap(sentence -> Arrays.stream(sentence.split("\\s+")))
+            .distinct()
+            .collect(Collectors.toList());
+
+        System.out.println(distinctWords);

@@ -1,0 +1,256 @@
+Verizon Questions:
+-----------------
+Written Test
+Q1) We are having Employee class as shown below.
+class Employee{
+	private String name;
+	
+	private String dept;
+	
+	private String salary;
+}
+
+Answer:
+HashMap<String,Employee> map = new HashMap<String,Employee>();
+
+Employee e1=new Employee("1001","Rahul", "Gupta", "agupta");
+Employee e2=new Employee("1002","Bijay", "Gupta", "bjay");
+
+map.put(e1.getEno(), e1);
+map.put(e2.getEno(), e2);
+for (Map.Entry<String, ArrayList<Employee>> entry : map.entrySet()) {
+
+    String key = entry.getKey();
+
+    Employee value = entry.getValue();
+
+    System.out.println("Key = " + key);
+
+    System.out.println("Values = " + value.getEno() + " "+ value.getFname()+" "+value.getLname()+" "+getEmailid());
+
+}       
+Construct a map with Employee name as key and entire employee object as value for the map.
+Note: The names will be duplicates, but the key should not be overriden with last inserted employee object.
+If names are same, all the employees information should be kept under same key.
+
+Q2) Map<String,List<Employee>> m1 = new HashMap<>();
+Map<String,List<Employee>> m2 = new HashMap<>();
+
+Merge both the maps with Employee name as Key and List<Employee> as value.
+The same rule mentioned in (Q1) is applicable for Q2.
+
+Q3) {
+    "cars": {
+        "Nissan": [
+            {"model":"Sentra", "doors":4},
+            {"model":"Maxima", "doors":4},
+            {"model":"Skyline", "doors":2}
+        ],
+        "Ford": [
+            {"model":"Taurus", "doors":4},
+            {"model":"Escort", "doors":4}
+        ]
+    }
+}
+https://www.digitalocean.com/community/tutorials/jackson-json-java-parser-api-example-tutorial
+Write the java classes to map this above json structure.
+
+Q4) Write a brief note on Spring Test module?
+
+Q5) I have log4j in our application. Say we have 3 levels of logger with us - DEBUG, INFO, ERROR.
+I have DEV, INT, QA, PROD. I have parameters Date, DateTime, Error Message that can be printed in logger.
+What are the levels that you will use in each environment along with the above parameters.
+Give explanation with reasons (i.e. give reason why you choose corresponding logger level and parameters)?
+
+F2F:
+
+Q6) How will you handle exception in Springboot application?
+Q7) How will you load properties file based on the environment?
+Q8) What is REST Template? https://www.baeldung.com/rest-template
+Q9) What is OAUTH? How did you implemented in your application?
+Q10) How to configure a database in Springboot?
+Q11) What is @ExceptionHandler and how it will work internally? https://howtodoinjava.com/spring-boot2/spring-rest-request-validation/
+Q12) What is @PostConstruct annotation? https://www.baeldung.com/spring-postconstruct-predestroy
+Q13) What is difference between @Controller vs @RestController? https://dzone.com/articles/spring-framework-restcontroller-vs-controller
+Q14) What is the role of @Component annotation? https://www.baeldung.com/spring-component-repository-service
+Q15) How you will avoid loading of Default Spring boot classes? https://dzone.com/articles/avoid-unwanted-component
+Q16) How will you use .yaml file in Spring boot? What is its use over properties file? https://itnext.io/why-should-we-prefer-the-yaml-file-over-the-properties-file-for-configurations-in-spring-boot-f31a273a923b
+Q17) Is it possible to load a property file from external location? https://www.baeldung.com/spring-properties-file-outside-jar
+Q18) Can we have more than one main class annotated with @SprinBootApplication? [This question is very important] https://javadeveloperzone.com/spring-boot/spring-boot-multiple-main-class/
+Q19) What is the spring data jpa? Difference between Hibernate and spring data jpa? https://stackoverflow.com/questions/23862994/what-is-the-difference-between-hibernate-and-spring-data-jpa
+Q20) Tell about @Transactional annotation? https://dzone.com/articles/how-does-spring-transactional
+Q21) What is docker?
+Q22) What are Microservices? How microservices are interconnected?
+Q23) Explain the software life cycle and phases carried out in your application?
+---------------------------------------------------------------------------------------------------------------------------------------
+DXC Technology:
+F2F
+Q1) What is diff b/w Interface and Abstract Class? https://www.javatpoint.com/difference-between-abstract-class-and-interface
+Q2) Can we override a static method? https://www.tutorialspoint.com/Can-we-overload-or-override-a-static-method-in-Java
+Q3) Explain the Exception Hierarchy? https://www.javatpoint.com/exception-handling-in-java
+Q4) What are filters in streams? https://mkyong.com/java8/java-8-streams-filter-examples/
+Q4) What is exact use of functional interface? https://www.geeksforgeeks.org/functional-interfaces-java/
+Q5) Can we have the Object.class methods inside functional interface? https://stackoverflow.com/questions/8721848/overriding-object-class-methods-within-an-interface-in-java
+Q6) What are options available in Streams to read a text file? https://www.geeksforgeeks.org/different-ways-reading-text-file-java/
+Q7) What are predicates in java8? https://www.javatpoint.com/java-predicate-interface
+Q8) How will you load properties file based on the environment? https://www.baeldung.com/properties-with-spring
+Q9) How will you define a main class in Springboot for a web application? https://www.javadevjournal.com/spring-boot/configuring-a-main-class-in-spring-boot/
+Q10) How do you implement filters in Springboot? https://www.baeldung.com/spring-boot-add-filter
+Q11) What is optional in Java 8? https://mkyong.com/java8/java-8-optional-in-depth/
+---------------------------------------------------------------------------------------------------------------------------------------
+HCL:
+F2F
+Q1) Explain overriding of static variables?
+Q2) What is type casting in java? https://www.baeldung.com/java-type-casting
+Q3) What is Autoboxing and Unboxing in Java? https://www.javatpoint.com/autoboxing-and-unboxing
+Q4) Java language follows - call by value or Call by reference strategy? [Tricky question - give valid reason while explaining] https://www.javatpoint.com/call-by-value-and-call-by-reference-in-java
+Q5) write a custom exception class? Why we need to extend RunTimeException? https://coderanch.com/t/376608/java/extend-RuntimeException
+Q6) Find the 2nd largest number in an integer array?
+Q7) What is @PathParam vs @QueryParam? https://medium.com/1developer/spring-requestparam-vs-queryparam-vs-pathvariable-vs-pathparam-7c5655e541ad
+Q8) what is @RequestBody annotation? https://www.baeldung.com/spring-request-response-body
+
+CLIENT ROUND [All the below are very important questions]
+Q9) What is diff b/w Tomcat server and JBoss server?
+Q10) What is SSL?
+Q11) Diff b/w http and https?
+Q12) What is keystore?
+Q13) What is trust certificate?
+Q14) What is one way SSL and two way SSL? In your application, which one you are using?
+Q15) What is Required and RequiredNew in @Transactional annotation? [Give proper and clear explanation]
+Q16) How will you configure a project in Bamboo?
+Q17) If you do UC deploy, where will your application jar or ear or war will be placed in server?
+Q18) What is test log in quality center?
+Q19) What is a lifeline in a Sequence Diagram?
+Q20) How will you do rollback in your application?
+Q21) How keystore will be working in server?
+---------------------------------------------------------------------------------------------------------------------------------------
+Ericsson:
+F2F
+Q1) What is big O notation? [They expected some data structures concepts]
+Q2) How will you implement a custom linked list in Java and how will you reverse it? [Should not use collections and Iterators- this question is asked in 
+so many companies - please take special care on this question]
+Q3) Explain Thread pool executors? https://www.javatpoint.com/java-thread-pool
+Q4) Explain @Configuration, @Autowired annotation by writing an example using Springboot? https://mkyong.com/spring/spring-auto-wiring-beans-with-autowired-annotation/
+Q5) Implement a sample program with map(), filter(), sorted() using Java 8 streams?
+Q6) What is Jenkins?
+Q7) What is the main theme of functional interface?
+---------------------------------------------------------------------------------------------------------------------------------------
+Tech Mahindra:
+F2F
+Q1) Implement a custom linked list in java? https://dzone.com/articles/creating-a-custom-linked-list-implementation, 	https://www.javatpoint.com/java-program-to-create-and-display-a-singly-linked-list
+Q2) What is criteria builder in hibernate? https://www.baeldung.com/hibernate-criteria-queries
+Q3) Write a program to arrange the list of integers in such a way that all even numbers should come first followed by odd numbers? https://stackoverflow.com/questions/22810806/how-can-i-move-all-even-numbers-to-front-in-an-array
+Input: [3,4,5,6,7,8]
+Output: [4,6,8,3,5,7]
+Note: Use the same input list and rearrange the data. Should not create any new list or array
+Q4) What is @CascadeType.Merge in hibernate? https://www.baeldung.com/jpa-cascade-types
+Q5) Write a sample program for @onetomany and @manytoone mapping in hibernate? https://www.javatpoint.com/one-to-one-mapping-in-hibernate-by-many-to-one-example
+Q6) What is the diff b.w JPA and Hibernate? https://thoughts-on-java.org/difference-jpa-hibernate-eclipselink/
+Q7) What is the advantage of Spring data jpa over hibernate? https://dzone.com/articles/what-is-the-difference-between-hibernate-and-sprin-1
+Q8) What is the purpose of dialect in hibernate? https://www.javatpoint.com/dialects-in-hibernate
+Q9) Implement an example for NamedQuery in hibernate? https://www.javatpoint.com/hibernate-named-query
+Q10) Diff b.w JPQL and HQL? https://docs.jboss.org/hibernate/orm/4.3/devguide/en-US/html/ch11.html
+Q11) Explain Declarative and programmatic transaction management? https://www.tutorialspoint.com/spring/spring_transaction_management.htm
+Q12) Explain LazyFetch?
+Q13) Diff b.w get() and load()?
+Q14) Diff b.w merge() and update()?
+Q15) Explain Spring life cycle? https://www.tutorialspoint.com/spring/spring_bean_life_cycle.htm
+Q16) What is Aspect? Write an example for @Around?
+Q17) Different ways of generating a primary key in hibernate? https://www.baeldung.com/hibernate-identifiers
+Q18) What is @Embeddable and @Embedded annotation in hibernate? https://www.callicoder.com/hibernate-spring-boot-jpa-embeddable-demo/
+---------------------------------------------------------------------------------------------------------------------------------------
+TCS:
+F2F
+Q1) What is advantage and disadvantage of Maven? https://dzone.com/articles/mavens-strengths-and
+Q2) Find the missing numbers between 1 to 50? [Program] https://www.javamadesoeasy.com/2015/02/missing-numbers-between-1-to-100-in.html
+Q3) Program was given using these operators - >> << >>> [Please check this operators working logic]
+Q4) Implement a custom linked list in java
+Q5) Concept of having multiple main classes in spring boot? https://mkyong.com/spring-boot/spring-boot-which-main-class-to-start/
+Q6) Get the second largest salary using oracle query? SELECT MAX(Salary) From Employee WHERE Salary < ( SELECT Max(Salary) FROM Employee), SELECT Salary FROM (SELECT DISTINCT salary FROM Table_Name ORDER BY Salary DESC) WHERE ROWNUM=2;
+Q7) What is anti join vs semi join in oracle? https://www.javatpoint.com/oracle-anti-join
+Q8) Write a syntax of PLSQL store procedure?
+Q9) Explain .yaml in springboot? https://mkyong.com/spring-boot/spring-boot-yaml-example/
+Q10) Explain spring data jpa? https://www.baeldung.com/the-persistence-layer-with-spring-data-jpa
+---------------------------------------------------------------------------------------------------------------------------------------
+Infosys:
+F2F
+Q1) Why you prefer MongoDB instead of Relational Database?
+Q2) For what purpose you have MongoDB in your application?
+Q3) What are the advantages you will get when you use MongoDB when compared to relational database?
+Q4) What is MongoTemplate and MongoRepository?
+Q5) What is the advantages of stored procedure in oracle?
+Q6) How store procedure works? What are the advantages of Stored procedures?
+Q7) When will you use static final variable in Multi-threading?
+Q8) When will you go for static variable in Multi-threading?
+Q9) Consider i have a variable and i need to share it across multiple threads. What will you use to achieve this case?
+Q10) Tell an example for Synchronization?
+Q11) How will you achieve Synchronization?
+Q12) What is deadlock and starvation?
+Q13) Consider i am having a ArrayList with 1000 values. For each value to check during the search, its cost is 1 secs.
+What is the best case, worst case and average case time?
+Q14) Explain the exception hierarchy?
+Q15) Why we need to extend RunTimeException whenever we write custom exception class?
+Q16) What are checked exceptions?
+Q17) Explain the annotations that you used in your Controller class?
+Q18) How will you connect database in springboot?
+Q19) What is spring data jpa?
+Q20) What is SSL?
+Q21) Diff b/w http and https?
+Q22) What is keystore?
+Q23) What is trust certificate?
+Q24) What is one way SSL and two way SSL? In your application, which one you are using? [Most important question]
+Q25) How a webserver works?
+Q26) Explain all the securities that you are using in your application? How they are implemented?
+Q27) What are clusters in MongoDB?
+Manager F2F
+Q28) Explain the software lifecycle used in your application?
+Q29) How will you manage unit test cases in your application?
+Q30) Did you managed a team? [This question is asked for persons with 5+ years of experience-Please don't day i didn't managed]
+Q31) Did you done requirement estimation? How will you do? [This question is asked for persons with 5+ years of experience]
+Q32) Will you interact with client?
+Q33) What are tools that you are using for code maintenance, code building and deployment?
+Q34) Do you know basic unix commands?
+Q35) What are critical challenges that you faced and how did you resolved it? [Please don't say you never faced any issues]
+Q36) Will you do peer to peer review for your team members? If so, what are the metrics and standard that you will check and validate?
+[This question is asked for persons with 5+ years of experience]
+Q37) What are documents that you use/create during the design phase?
+---------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+Advantage of java 8
+Use of lambda function
+functional interfaces https://docs.oracle.com/javase/8/docs/api/java/util/function/package-summary.html
+return type of consumer functional interface
+use of Optional https://www.oracle.com/technical-resources/articles/java/java8-optional.html
+use of static & default method in interface
+why comparator over comparable 
+d/b @bean / @component. when to use ?
+how to remove duplicate objects from List
+why do we need to override hashcode, why cant we handle it in equals method.. get it ?
+@autowire -> setter vs construtor https://dzone.com/articles/spring-di-patterns-the-good-the-bad-and-the-ugly
+@autowire vs @inject https://www.baeldung.com/spring-annotations-resource-inject-autowire
+Dependency Injection
+Bean Scopes
+d/b request and session scope
+real time scenario for prototype scope
+what will happen if we define two same type beans
+what are all the ways to define bean. i said xml/@annotation. he said ther is one more  which is java based bean(i didn't know this)
+what is hash collision. when it will happen.
+how to eliminate hash collision
+singleton design pattern.when to use
+builder pattern
+d/b singleton design pattern and singleton bean scope 
+i have string "MADAM" -> i want to print M-2 , A-2, D1 . how will you do
+default bean -> create by type or name 
+
+
+consumer producer
+spring boot as war https://mkyong.com/spring-boot/spring-boot-deploy-war-file-to-tomcat/
+hashtable vs hashmap vs concurrencyhashmap https://mkyong.com/spring-boot/spring-boot-deploy-war-file-to-tomcat/
+
+List<BuyerActionDTO> gridList = new ArrayList<>();
+		BuyerActionDTO buyerActionDTO = new BuyerActionDTO();
+		buyerActionDTO.setGridId(Collections.singletonList(1071L));
+		buyerActionDTO.setGridId(Collections.singletonList(1072L));
+		gridList.add(buyerActionDTO);
