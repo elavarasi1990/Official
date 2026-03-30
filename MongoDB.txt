@@ -1,0 +1,57 @@
+MongoDB Syntax:
+1. show dbs; show collections;
+2. use appdb;
+3. db.users.insertOne({name : "Elavarasi"})
+4. db.users.insertOne({name : "Harish", age:6, address: {street : "Samiyar Madam",pincode : 600024}, hobbies :["reading","playing"]})
+{
+  acknowledged: true,
+  insertedId: ObjectId("65423aa2505e49aa4363a521")
+}
+appdb> db.users.find()
+[
+  { _id: ObjectId("654239a2505e49aa4363a520"), name: 'Elavarasi' },
+  {
+    _id: ObjectId("65423aa2505e49aa4363a521"),
+    name: 'Harish',
+    age: 6,
+    address: { street: 'Samiyar Madam', pincode: 600024 },
+    hobbies: [ 'reading', 'playing' ]
+  }
+5.db.users.insertMany([{name : "Muthu"},{name : " Kumar"}, {name: "Rajesh"}])  
+6.appdb> db.users.find().limit(2)
+7.appdb> db.users.find().sort({name : 1}).limit(3) //Asc order
+8.appdb> db.users.find().sort({name : -1}).limit(3) // desc order
+9.db.users.find().sort({age:1,name : 1}).limit(3)
+10.db.users.find().skip(1).limit(3)
+11.db.users.find({name : "Harish"})
+12.db.users.find({name : "Harish"},{name : 1,age :1})
+13.db.users.find({ name: "Harish" }, { name: 1, age: 1,_id:0})
+14.db.users.find({ name: {$eq:"Harish"}}) //Complex query
+15.db.users.find({ name: {$ne:"Harish"}})
+16.db.users.find({age:{$gt:6}})
+17.db.users.find({age:{$gte:6}})
+18.db.users.find({age:{$lt:6}})
+19.db.users.find({age:{$lte:6}})
+20.db.users.find({name:{$in:["Harish","Rajesh"]}})
+21.db.users.find({name:{$nin:["Harish","Rajesh"]}})
+22.db.users.find({age:{$exists:true}})
+23.db.users.find({age:{$exists:false}})
+24.db.users.find({age:{$gte:5,$lte:6},name:"Harish"})
+25.db.users.find({$or:[{age:6},{name:"Rajesh"}]})
+26.db.users.find({$and:[{age:6},{name:"Rajesh"}]})
+27.db.users.find({age:{$not:{$lte:6}}})
+28.db.users.find({$expr:{$gt:["$debt","$balance"]}})//Comparison two fields
+29.db.users.findOne({$expr:{$gt:["$debt","$balance"]}}) 
+30.db.users.find({"address.street":"Samiyar Madam"})
+31.db.users.countDocuments({age:{$lte:6}})
+32.db.users.updateOne({age:6},{$set:{age:7}})
+33.db.users.updateOne({_id:ObjectId("65423aa2505e49aa4363a521")},{$inc:{age:3}})
+34.db.users.updateOne({_id:ObjectId("65423aa2505e49aa4363a521")},{$rename: {name:"FirstName"}}) //Column rename
+35.db.users.updateOne({_id:ObjectId("65423aa2505e49aa4363a521")},{$push:{hobbies:"Swimming"}}) //adding value
+36.db.users.updateOne({_id:ObjectId("65423aa2505e49aa4363a521")},{$pull:{hobbies:"Swimming"}}) //removing value
+37.db.users.updateOne({_id:ObjectId("65423aa2505e49aa4363a521")},{$unset: {age:""}}) //remove field
+38.db.users.updateMany({hobbies:{$exists:true}},{$unset: {hobbies:""}})
+39.db.users.replaceOne({age:36},{name:"sundar_raj"}) //Completed changed whole document...be careful while use
+40.db.users.deleteOne({name:" Kumar"})
+41.db.users.deleteMany({address:{$exists:false}})
+42.db.dropDatabase() //Delete Database
